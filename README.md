@@ -8,8 +8,10 @@ Este projeto é um jogo simples de Pedra, Papel e Tesoura implementado para ser 
 ## Como Jogar
 
 ***Clone o repositório para o seu computador.***
-git clone https://github.com/Lucasmanuelmz/Project-2js/
-Abra o arquivo index.html em um navegador.
+
+1 - git clone https://github.com/Lucasmanuelmz/Project-2js/
+
+2 - Abra o arquivo ***index.html*** em um navegador.
 
 O console solicitará sua escolha a cada rodada (rock, paper ou scissors).
 
