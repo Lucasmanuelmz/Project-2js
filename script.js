@@ -10,13 +10,13 @@ function getComputerChoice(playerSelection) {
 function playRound(playerSelection, computerSelection) {
     if(playerSelection === computerSelection) {
         return "Empate!"
-    } else if (playerSelection === "Rock" && computerSelection === "Scissors" || 
-            playerSelection === "Scissors" && computerSelection === "Paper" || 
+    } else if (playerSelection === "Rock" && computerSelection === "Scissors" ||
+            playerSelection === "Scissors" && computerSelection === "Paper"  ||
             playerSelection === "Paper" && computerSelection === "Rock") {
                 return "Você ganhou!";
             } else {
                return "Você perdeu!";
-            } 
+            }
 }
 
 const playerSelection = "scissors"; //Seleção da opção do jogador
