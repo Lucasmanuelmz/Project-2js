@@ -1,24 +1,45 @@
-//Nesta função defino as opções e a escolha aleatória do computador as opções
+let buttons = document.querySelectorAll('button');
+let content = document.querySelector('#answer');
+let paragraph = document.createElement('p');
+let para = document.createElement('p');
+let parag = document.createElement('p');
+content.appendChild(paragraph);
+content.appendChild(para);
+content.appendChild(parag);
+
+parag.style.fontWeight = '700';
+parag.style.fontStyle = 'italic'
+
+
 function getComputerChoice(playerSelection) {
-    let options = ['Rock', 'Paper', 'Scissors'];//Opções
-    let computerSelection = options[Math.floor(Math.random() * 3)] //Nesta linha o computador escolhe aleatoriamente uma opção
-    console.log( `Você escolheu: ${playerSelection} Computador escolheu: 
-    ${computerSelection} ${playRound(playerSelection, computerSelection)}`); // imprimo o resultado no console
-    
+    let options = ['Rock', 'Paper', 'Scissors'];
+    let computerSelection = options[Math.floor(Math.random() * 3)] 
+    paragraph.textContent = `Você escolheu: ${playerSelection}`;
+    para.textContent = `Computador escolheu: ${computerSelection}` 
+    parag.textContent = playRound(playerSelection, computerSelection); 
+    return paragraph, para, parag;
 }
-//Defino a lógica e as regras do jogo
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        let playerSelection = button.textContent;
+        getComputerChoice(playerSelection);
+    })
+})
+
 function playRound(playerSelection, computerSelection) {
     if(playerSelection === computerSelection) {
         return "Empate!"
-    } else if (playerSelection === "Rock" && computerSelection === "Scissors" ||
-            playerSelection === "Scissors" && computerSelection === "Paper"  ||
-            playerSelection === "Paper" && computerSelection === "Rock") {
-                return "Você ganhou!";
+    } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+        return "Você ganhou este jogo!";
+        } else if(playerSelection === "Paper" && computerSelection === "Rock"){
+                return "Você ganhou este jogo!";
+            } else if(playerSelection === 'Rock' && computerSelection === "Paper") {
+               return 'Você ganhou este jogo!';
             } else {
-               return "Você perdeu!";
+                return 'Você perdeu este jogo!'
             }
 }
 
-const playerSelection = "scissors"; //Seleção da opção do jogador
-const computerSelection = getComputerChoice(playerSelection);
-playRound(playerSelection, computerSelection);//invoquei a função playRound aqui
+playRound();
+
